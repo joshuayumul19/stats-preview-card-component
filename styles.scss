@@ -1,0 +1,127 @@
+$veryDarkBlue: hsl(233, 47%, 7%);
+$darkDesaturatedBlue: hsl(244, 38%, 16%);
+$softViolet: hsl(277, 64%, 61%);
+$whiteP: hsla(0, 0%, 100%, 0.75);
+$whiteH: hsla(0, 0%, 100%, 0.6);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $veryDarkBlue;
+}
+
+main {
+    display: flex;
+    width: 1050px;
+    margin: 150px auto;
+    color: white;
+    background-color: $darkDesaturatedBlue;
+    border-radius: 10px;
+}
+
+.text-container {
+    margin: 80px auto;
+    width: 358px;
+
+    &>h1 {
+        font-family: 'Inter';
+        margin-bottom: 20px;
+
+        &>span {
+            color: $softViolet;
+        }
+    }
+
+    &>p {
+        font-size: 15px;
+        margin-bottom: 80px;
+        font-family: 'Lexend Deca';
+        color: $whiteP;
+    }
+
+    &>h3 {
+        font-family: 'Inter';
+    }
+}
+
+.image-container-desktop {
+    background-color: $softViolet;
+    height: 446px;
+    border-radius: 0 10px 10px 0;
+
+    &>img {
+        mix-blend-mode: multiply;
+        width: 100%;
+    }
+}
+
+.image-container-mobile {
+    display: none;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+
+    &>* h3 {
+        font-family: 'Inter';
+        margin-bottom: 4px;
+    }
+
+    &>* h6 {
+        color: $whiteH;
+        font-family: 'Lexend Deca';
+        font-weight: normal;
+        letter-spacing: 1.5px;
+    }
+
+}
+
+@media only screen and (max-width:375px) {
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 333px;
+        margin: 2% auto;
+    }
+
+    .image-container-desktop {
+        display: none;
+    }
+
+    .image-container-mobile {
+        display: block;
+        background-color: $softViolet;
+        height: 244.5px;
+        border-radius: 10px 10px 0 0;
+
+        &>img {
+            mix-blend-mode: multiply;
+            width: 100%;
+        }
+    }
+
+    .text-container {
+        width: 90%;
+        text-align: center;
+        margin: 30px auto;
+
+        &>p {
+            margin-bottom: 30px;
+        }
+    }
+
+    .stats {
+        display: unset;
+
+        &>div {
+            margin-bottom: 30px;
+        }
+    }
+}
